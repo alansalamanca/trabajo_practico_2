@@ -1,4 +1,7 @@
-package ar.edu.unju.fi.ejercicio1.model;
+package ar.edu.unju.fi.ejercicio5.model;
+
+import ar.edu.unju.fi.ejercicio1.model.Producto.Categoria;
+import ar.edu.unju.fi.ejercicio1.model.Producto.OrigenFabricacion;
 
 public class Producto {
 	private int codigo;
@@ -6,6 +9,7 @@ public class Producto {
 	private float precioUnitario;
 	private OrigenFabricacion origen;
 	private Categoria categoria;
+	private boolean estado;
 	
 	public enum OrigenFabricacion{
 		ARGENTINA, CHINA, BRASIL, URUGUAY;
@@ -20,19 +24,20 @@ public class Producto {
 	}
 
 	public Producto(int codigo, String descripcion, float precioUnitario, OrigenFabricacion origen,
-			Categoria categoria) {
+			Categoria categoria, boolean estado) {
 		super();
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precioUnitario = precioUnitario;
 		this.origen = origen;
 		this.categoria = categoria;
+		this.estado = estado;
 	}
 
 	@Override
 	public String toString() {
 		return "Producto [codigo=" + codigo + ", descripcion=" + descripcion + ", precioUnitario=" + precioUnitario
-				+ ", origen=" + origen + ", categoria=" + categoria + "]";
+				+ ", origen=" + origen + ", categoria=" + categoria + ",estado=" + estado + "]";
 	}
 
 	public int getCodigo() {
@@ -75,4 +80,12 @@ public class Producto {
 		this.categoria = categoria;
 	}
 
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	
 }
